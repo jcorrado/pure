@@ -114,8 +114,8 @@ prompt_pure_preprompt_render() {
 	# Initialize the preprompt array.
 	local -a preprompt_parts
 
-	# Set the path.
-	preprompt_parts+=('%F{blue}%~%f')
+	# Set bg job count when gt 0, and the path.
+        preprompt_parts+=('%(1j.%F{white}* .)%F{blue}%~%f')
 
 	# Add git branch and dirty status info.
 	typeset -gA prompt_pure_vcs_info
